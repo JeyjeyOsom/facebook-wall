@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #333333;
+  --fb-blue: #3b5998;
+  --fb-blue-medium: #6d84b4;
+  --fb-blue-pale: #d8dfea;
+  --fb-border: #b7b7b7;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-fb-blue: var(--fb-blue);
+  --color-fb-blue-medium: var(--fb-blue-medium);
+  --color-fb-blue-pale: var(--fb-blue-pale);
+  --color-fb-border: var(--fb-border);
+
+  /* shadcn/ui tokens, mapped onto the 2008 palette */
+  --color-primary: #5b74a8;
+  --color-primary-foreground: #ffffff;
+  --color-secondary: #d8dfea;
+  --color-secondary-foreground: #3b5998;
+  --color-muted: #f7f7f7;
+  --color-muted-foreground: #777777;
+  --color-accent: #d8dfea;
+  --color-accent-foreground: #3b5998;
+  --color-destructive: #dd3c10;
+  --color-card: #ffffff;
+  --color-card-foreground: #333333;
+  --color-border: #b7b7b7;
+  --color-input: #bdc7d8;
+  --color-ring: #6d84b4;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: "Lucida Grande", "Lucida Sans Unicode", Tahoma, Verdana, Arial,
+    sans-serif;
+}
+
+/* The classic 2008 Facebook button */
+.fb-btn {
+  height: auto;
+  border-radius: 3px;
+  border: 1px solid #29447e;
+  background-color: #5b74a8;
+  box-shadow: inset 0 1px 0 0 #8a9cc4;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 14px;
+}
+.fb-btn:hover:not(:disabled) {
+  background-color: #4f69a0;
+}
+.fb-btn:active:not(:disabled) {
+  background-color: #29447e;
+}
+.fb-btn:disabled {
+  opacity: 0.55;
+}
+
+.fb-link {
+  color: #3b5998;
+}
+.fb-link:hover {
+  text-decoration: underline;
+}
+
+/* New wall posts slide in and flash 2008-notification yellow */
+@keyframes wall-in {
+  from {
+    opacity: 0;
+    transform: translateY(-3px);
+  }
+}
+@keyframes wall-flash {
+  0% {
+    background-color: #fff9d7;
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+.wall-new {
+  animation:
+    wall-in 0.25s ease-out,
+    wall-flash 2s ease-out;
+}
